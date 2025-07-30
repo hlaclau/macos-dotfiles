@@ -7,4 +7,3 @@ font-family = JetBrains Mono
 mouse-hide-while-typing = true
 macos-option-as-alt = true
 keybind = super+t=ignore
-keybind = shift+enter=text:\n

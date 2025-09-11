@@ -18,5 +18,8 @@ defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true" && killall Fi
 # Keep folders on top on Desktop
 defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true" && killall Finder
 
+# Disable press and hold for key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Apply the settings
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u

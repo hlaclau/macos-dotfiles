@@ -40,6 +40,8 @@ brew "node"
 brew "pnpm"
 # Systems programming language with modern features
 brew "rust"
+# waybar but for macOS
+brew "sketchybar"
 # go code generator from sql queries
 brew "sqlc"
 # Fast, minimal, and customizable shell prompt
@@ -61,12 +63,12 @@ brew "zsh-autosuggestions"
 # Syntax highlighting for Zsh commands
 brew "zsh-syntax-highlighting"
 
+# Agentic text editor
+cask "cursor"
 # Container platform for building and running applications
 cask "docker"
 # Dock management tool for macOS
 cask "dockey"
-# Privacy-focused web browser
-cask "firefox"
 # Programming font with extensive icon support
 cask "font-jetbrains-mono-nerd-font"
 # Modern monospace font with icon support
@@ -85,3 +87,5 @@ cask "nikitabobko/tap/aerospace"
 cask "obsidian"
 # Spotlight-like productivity tool with extensions
 cask "raycast"
+# The best browser 
+cask "zen"

@@ -84,6 +84,7 @@ export FZF_TMUX_OPTS=" -p90%,70% "
 alias ls="eza -a --no-filesize --long --color=always --icons=always --no-user"
 alias cat="bat"
 alias cd="z"
+alias n="nvim"
 
 # Git related aliases
 alias g="git"
@@ -123,4 +124,5 @@ if command -v tmux &> /dev/null; then
   tmux attach || tmux
 fi
 
-
+# add dotnet tools to path
+export PATH="$HOME/.dotnet/tools:$PATH"

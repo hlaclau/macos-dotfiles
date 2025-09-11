@@ -119,8 +119,8 @@ alias reload="source ~/.zshrc"
 #                               TMUX AUTO-START
 # =============================================================================
 
-# Open tmux by default if available
-if command -v tmux &> /dev/null; then
+# Open tmux by default if available and not already in tmux
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach || tmux
 fi
 

@@ -12,6 +12,8 @@ brew "btop"
 brew "cmatrix"
 # Modern ls replacement with Git integration, icons, and tree view
 brew "eza"
+# System information tool with customizable display options
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Fuzzy finder for command line with advanced search and completion

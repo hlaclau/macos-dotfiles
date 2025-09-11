@@ -1,11 +1,10 @@
 #!/bin/bash
 
 FRONT_APP=(
-  label.font="$FONT:ExtraBold:14.0"
-  icon.font="sketchybar-app-font:Regular:16.0" \
-  icon.color=$BG_PRI_COLR
-  label.color=$BG_PRI_COLR
-  background.color=$LAVENDER
+  label.font="$FONT:Medium:13.0"
+  label.color=$WHITE
+  background.drawing=off
+  icon.drawing=off
   script="$PLUGIN_DIR/front_app.sh"
 )
 

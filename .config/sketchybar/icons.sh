@@ -3,6 +3,7 @@
 export APPLE_ICON=􀣺
 
 export WIFI_CONN_ICON=􀙇
+export WIFI_DISCONN_ICON=􀙈
 
 export SOUND_FUL_ICON=􀊩
 export SOUND_HIG_ICON=􀊧
@@ -16,5 +17,15 @@ export BATTERY_75_ICON=􀺸
 export BATTERY_50_ICON=􀺶
 export BATTERY_25_ICON=􀛩
 export BATTERY_0_ICON=􀛪
+
+export MUSIC_ICON=􀑪
+export MUSIC_PLAY_ICON=􀊄
+export MUSIC_PAUSE_ICON=􀊆
+export MUSIC_NEXT_ICON=􀊐
+export MUSIC_PREV_ICON=􀊎
+
+export CALENDAR_ICON=􀉉
+export CPU_ICON=􀫥
+export MEMORY_ICON=􀫦
 
 

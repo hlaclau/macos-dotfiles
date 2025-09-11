@@ -1,14 +1,18 @@
 #!/bin/bash
 
-WIDTH="dynamic"
+source "$CONFIG_DIR/colors.sh"
+
 SELECTED="false"
+BG_COLOR=$TRANSPARENT
+ICON_COLOR=$DARK_WHITE
 
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-    WIDTH="0"
     SELECTED="true"
+    BG_COLOR=$MAUVE
+    ICON_COLOR=$WHITE
 fi
 
-sketchybar --animate tanh 10 --set $NAME \
-icon.highlight=$SELECTED \
-background.highlight=$SELECTED \
-label.width=$WIDTH
+sketchybar --animate sin 20 --set $NAME \
+           icon.highlight=$SELECTED \
+           icon.color=$ICON_COLOR \
+           background.color=$BG_COLOR

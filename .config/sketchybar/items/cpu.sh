@@ -1,10 +1,12 @@
 #!/bin/bash
+
 CPU=(
   update_freq=2
-  icon.font="$FONT:Regular:16.0"
-  icon=
-  icon.color=$RED
-  background.color=$BG_SEC_COLR
+  icon.font="$ICON_FONT:Regular:16.0"
+  icon=$CPU_ICON
+  icon.color=$PEACH
+  background.color=$ITEM_BG_COLOR
+  background.corner_radius=10
   script="$PLUGIN_DIR/cpu.sh"
 )
 

@@ -13,17 +13,17 @@ source "$DIR/colors.sh"
 source "$DIR/icons.sh"
 
 BAR_PROPS=(
-  height=32
-  color=$BG_PRI_COLR
-  shadow=off
+  height=36
+  color=$BAR_COLOR
+  shadow=on
   position=top
   sticky=on
   padding_right=15
   padding_left=15
-  corner_radius=10
-  y_offset=6
-  margin=6
-  blur_radius=30
+  corner_radius=12
+  y_offset=8
+  margin=8
+  blur_radius=50
   notch_width=0
 )
 
@@ -31,17 +31,21 @@ DEF_PROPS=(
   updates=when_shown
   icon.font="$ICON_FONT:Regular:16.0"
   icon.color=$WHITE
-  icon.padding_left=10
-  icon.padding_right=2
-  label.font="$FONT:Bold:14.0"
+  icon.padding_left=12
+  icon.padding_right=4
+  label.font="$FONT:Medium:13.0"
   label.color=$WHITE
   label.padding_left=$PADDING
-  label.padding_right=10
-  background.color=$BG_PRI_COLOR
+  label.padding_right=12
+  background.color=$ITEM_BG_COLOR
   background.padding_right=$PADDING
   background.padding_left=$PADDING
-  background.height=22
-  background.corner_radius=8
+  background.height=26
+  background.corner_radius=10
+  background.shadow.drawing=on
+  background.shadow.color=$SHADOW_COLOR
+  background.shadow.angle=90
+  background.shadow.distance=2
 )
 
 sketchybar --bar "${BAR_PROPS[@]}"
@@ -56,11 +60,13 @@ source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/time.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/sound.sh"
-source "$ITEM_DIR/cpu.sh"
-sketchybar --add item cat center \
+source "$ITEM_DIR/music.sh"
+
+sketchybar --add item cat right \
            --set cat icon="≽^•⩊•^≼"\
-                     icon.font="$ICON_FONT:Regular:18.0" \
-                     icon.color=$DARK_WHITE\
+                     icon.font="$ICON_FONT:Regular:16.0" \
+                     icon.color=$PINK\
+                     background.drawing=off\
                      label.draw=off
 
 

@@ -3,74 +3,121 @@
     "logo": {
         "source": "~/.config/fastfetch/ascii.txt",
         "color": {
-            "1": "magenta"
+            "1": "#f5c2e7",
+            "2": "#cba6f7", 
+            "3": "#89b4fa",
+            "4": "#a6e3a1",
+            "5": "#f9e2af",
+            "6": "#fab387",
+            "7": "#f38ba8"
         },
         "padding": {
-            "right": 3
+            "right": 5
         }
     },
     "display": {
-        "separator": "⊹ ⊹",
+        "separator": "◆",
         "color": {
-            "separator": "magenta",
-            "keys": "magenta"
+            "separator": "#f5c2e7",
+            "keys": "#cdd6f4",
+            "title": "#f5c2e7"
         }
     },
     "modules": [
         {
             "type": "title",
-            "format": " ฅ^•⩊•^ฅ {user-name}@{host-name}"
+            "format": "✦ {user-name}@{host-name} ✦",
+            "color": {
+                "title": "#f5c2e7"
+            }
         },
         "break",
         {
             "type": "os",
-            "key": " os"
+            "key": "󰍹 OS",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         {
             "type": "host",
-            "key": " host"
-        },
-        {
-            "type": "machine",
-            "key": "󱤓 machine"
+            "key": "󰟀 Host",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         {
             "type": "kernel",
-            "key": " kernel"
+            "key": "󰌽 Kernel",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
+        {
+            "type": "uptime",
+            "key": "󰅐 Uptime",
+            "color": {
+                "keys": "#cdd6f4"
+            }
+        },
+        "break",
         {
             "type": "packages",
-            "key": " packages"
-        },
-        {
-            "type": "terminal",
-            "key": " terminal"
+            "key": "󰏖 Packages",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         {
             "type": "shell",
-            "key": " shell"
+            "key": "󰆍 Shell",
+            "color": {
+                "keys": "#cdd6f4"
+            }
+        },
+        {
+            "type": "terminal",
+            "key": "󰆍 Terminal",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         "break",
         {
             "type": "cpu",
-            "key": " cpu"
-        },
-        {
-            "type": "cpuusage",
-            "key": "󰈸 cpu %"
+            "key": "󰍛 CPU",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         {
             "type": "memory",
-            "key": "󰍛 memory %"
+            "key": "󰍛 Memory",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         {
-            "type": "battery",
-            "key": "󰂄 battery %"
+            "type": "disk",
+            "key": "󰋊 Disk",
+            "color": {
+                "keys": "#cdd6f4"
+            }
         },
         "break",
         {
             "type": "colors",
-            "symbol": "circle"
+            "symbol": "●",
+            "color": {
+                "1": "#f38ba8",
+                "2": "#fab387",
+                "3": "#f9e2af", 
+                "4": "#a6e3a1",
+                "5": "#89b4fa",
+                "6": "#cba6f7",
+                "7": "#f5c2e7",
+                "8": "#b4befe"
+            }
         }
     ]
 }

@@ -1,5 +1,5 @@
 window-decoration = true
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 background-opacity = 0.9 
 font-size = 20
 font-thicken = true

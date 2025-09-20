@@ -1,4 +1,3 @@
-fastfetch
 # =============================================================================
 #                               PATH CONFIGURATIONS
 # =============================================================================
@@ -120,8 +119,17 @@ alias reload="source ~/.zshrc"
 # =============================================================================
 
 # Open tmux by default if available and not already in tmux
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [ -n "$PS1" ] && [[ $- == *i* ]]; then
   tmux attach || tmux
+fi
+
+# =============================================================================
+#                               FASTFETCH DISPLAY
+# =============================================================================
+
+# Show fastfetch only in interactive shells that are not inside tmux
+if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
+  fastfetch
 fi
 
 # add dotnet tools to path

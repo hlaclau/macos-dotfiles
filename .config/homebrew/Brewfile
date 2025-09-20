@@ -20,6 +20,8 @@ brew "fd"
 brew "fzf"
 # Disk usage analyzer 
 brew "gdu"
+# GPU-accelerated terminal with modern features
+brew "ghostty"
 # Syntax-highlighting pager for Git, diff, and grep with delta improvements
 brew "git-delta"
 # better go linter

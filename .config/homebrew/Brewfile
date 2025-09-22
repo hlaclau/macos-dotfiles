@@ -1,7 +1,5 @@
 cask_args appdir: "/Applications"
 
-tap "homebrew/bundle"
-
 # Modern cat replacement with syntax highlighting, Git integration, and paging
 brew "bat"
 # Cross-platform graphical process/system monitor for the terminal
@@ -20,8 +18,6 @@ brew "fd"
 brew "fzf"
 # Disk usage analyzer 
 brew "gdu"
-# GPU-accelerated terminal with modern features
-brew "ghostty"
 # Syntax-highlighting pager for Git, diff, and grep with delta improvements
 brew "git-delta"
 # better go linter

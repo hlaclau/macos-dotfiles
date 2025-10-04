@@ -65,8 +65,6 @@ brew "zsh-syntax-highlighting"
 
 # Agentic text editor
 cask "cursor"
-# Container platform for building and running applications
-cask "docker"
 # Dock management tool for macOS
 cask "dockey"
 # Programming font with extensive icon support

@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed on your macOS system:
 1. Clone this repository to your home directory:
 
    ```sh
-   git clone git@github.com:nzaeee/dotfiles.git ~/.dotfiles
+   git clone git@github.com:hlaclau/dotfiles.git ~/.dotfiles
    cd ~/.dotfiles
    ```
 

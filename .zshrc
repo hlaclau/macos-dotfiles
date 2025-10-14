@@ -84,13 +84,19 @@ alias ls="eza -a --no-filesize --long --color=always --icons=always --no-user"
 alias cat="bat"
 alias cd="z"
 alias n="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # Git related aliases
 alias g="git"
 alias ga="git add ."
+alias add="git add"
+alias commit="git commit -m"
+alias push="git push"
 alias gs="git status -s"
 alias gc='git commit -m'
 alias glog='git log --oneline --graph --all'
+
 alias lg="lazygit"
 alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 alias brew-update='brew bundle --file=.config/homebrew/Brewfile'

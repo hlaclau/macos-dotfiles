@@ -1,123 +1,79 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
+        "type": "auto",
         "source": "~/.config/fastfetch/ascii.txt",
         "color": {
-            "1": "#f5c2e7",
-            "2": "#cba6f7", 
-            "3": "#89b4fa",
-            "4": "#a6e3a1",
-            "5": "#f9e2af",
-            "6": "#fab387",
-            "7": "#f38ba8"
-        },
-        "padding": {
-            "right": 5
+            "1": "blue"
         }
     },
     "display": {
-        "separator": "◆",
-        "color": {
-            "separator": "#f5c2e7",
-            "keys": "#cdd6f4",
-            "title": "#f5c2e7"
-        }
+        "separator": ""
     },
     "modules": [
-        {
-            "type": "title",
-            "format": "✦ {user-name}@{host-name} ✦",
-            "color": {
-                "title": "#f5c2e7"
-            }
-        },
         "break",
-        {
-            "type": "os",
-            "key": "󰍹 OS",
-            "color": {
-                "keys": "#cdd6f4"
-            }
-        },
         {
             "type": "host",
-            "key": "󰟀 Host",
-            "color": {
-                "keys": "#cdd6f4"
-            }
+            "key": "╭─󰇅 ",
+            "keyColor": "blue"
         },
-        {
-            "type": "kernel",
-            "key": "󰌽 Kernel",
-            "color": {
-                "keys": "#cdd6f4"
-            }
-        },
-        {
-            "type": "uptime",
-            "key": "󰅐 Uptime",
-            "color": {
-                "keys": "#cdd6f4"
-            }
-        },
-        "break",
-        {
-            "type": "packages",
-            "key": "󰏖 Packages",
-            "color": {
-                "keys": "#cdd6f4"
-            }
-        },
-        {
-            "type": "shell",
-            "key": "󰆍 Shell",
-            "color": {
-                "keys": "#cdd6f4"
-            }
-        },
-        {
-            "type": "terminal",
-            "key": "󰆍 Terminal",
-            "color": {
-                "keys": "#cdd6f4"
-            }
-        },
-        "break",
         {
             "type": "cpu",
-            "key": "󰍛 CPU",
-            "color": {
-                "keys": "#cdd6f4"
-            }
+            "key": "├─ ",
+            "format": "{1}",
+            "keyColor": "blue"
         },
         {
             "type": "memory",
-            "key": "󰍛 Memory",
-            "color": {
-                "keys": "#cdd6f4"
-            }
+            "key": "├─ ",
+            "keyColor": "blue",
+            "format": "{2}"
         },
         {
-            "type": "disk",
-            "key": "󰋊 Disk",
-            "color": {
-                "keys": "#cdd6f4"
-            }
+            "type": "display",
+            "key": "╰─󰍹 ",
+            "keyColor": "blue",
+            "compactType": "original"
         },
         "break",
         {
-            "type": "colors",
-            "symbol": "●",
-            "color": {
-                "1": "#f38ba8",
-                "2": "#fab387",
-                "3": "#f9e2af", 
-                "4": "#a6e3a1",
-                "5": "#89b4fa",
-                "6": "#cba6f7",
-                "7": "#f5c2e7",
-                "8": "#b4befe"
-            }
-        }
+            "type": "shell",
+            "key": "╭─ ",
+            "keyColor": "green"
+        },
+        {
+            "type": "terminal",
+            "key": "├─ ",
+            "keyColor": "green"
+        },
+        {
+            "type": "de",
+            "key": "├─ ",
+            "keyColor": "green"
+        },
+        {
+            "type": "wm",
+            "key": "╰─ ",
+            "keyColor": "green"
+        },
+        "break",
+        {
+            "type": "title",
+            "key": "╭─ ",
+            "format": "{1}@{2}",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "os",
+            "key": "├─ ", 
+            "keyColor": "magenta"
+        },
+        {
+            "type": "kernel",
+            "key": "╰─ ",
+            "format": "{1} {2}",
+            "keyColor": "magenta"
+        },
+        "break",
+        "colors"
     ]
 }

@@ -28,6 +28,8 @@ brew "gum"
 brew "lazydocker"
 # Git TUI with staging, committing, and diff viewing
 brew "lazygit"
+# peak cli took
+brew "lolcat"
 # Media player supporting various formats with hardware acceleration
 brew "mpv"
 # System information tool with customizable display options

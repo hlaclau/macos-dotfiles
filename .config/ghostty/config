@@ -8,5 +8,4 @@ mouse-hide-while-typing = true
 macos-option-as-alt = true
 keybind = super+t=ignore
 keybind = shift+enter=text:\n
-custom-shader = shaders/cursor_blaze.glsl
-custom-shader = shaders/blaze_sparks.glsl
+custom-shader = shaders/cursor_frozen.glsl

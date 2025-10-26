@@ -8,4 +8,4 @@ mouse-hide-while-typing = true
 macos-option-as-alt = true
 keybind = super+t=ignore
 keybind = shift+enter=text:\n
-custom-shader = shaders/cursor_frozen.glsl
+custom-shader = shaders/cursor_mauve.glsl

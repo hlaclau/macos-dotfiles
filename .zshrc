@@ -89,7 +89,7 @@ export FZF_DEFAULT_OPTS=" \
 
 # Configure fzf previews
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
-export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+export FZF_ALT_C_OPTS="--preview 'eza --long --color=always --icons=always --git {} | head -200'"
 
 # Configure fzf for tmux
 export FZF_TMUX_OPTS=" -p90%,70% "
@@ -99,7 +99,9 @@ export FZF_TMUX_OPTS=" -p90%,70% "
 # =============================================================================
 
 # Modern replacements for standard commands
-alias ls="eza -a --no-filesize --long --color=always --icons=always --no-user"
+alias ls="eza --color=always --icons=always -a"
+alias ll="eza --long --color=always --icons=always --git -a"
+
 alias cat="bat"
 alias cd="z"
 alias n="nvim"
@@ -128,6 +130,15 @@ repo() {
     open "$repo_url" &>/dev/null
   else
     echo "Error: Not a Git repository or no 'origin' remote found."
+  fi
+}
+
+# Function for interactive directory selection with eza
+fzf-cd() {
+  local dir
+  dir=$(eza --tree --level=2 --color=always --icons=always | fzf --ansi --preview 'eza --long --color=always --icons=always {}' | sed 's/.* //')
+  if [ -n "$dir" ] && [ -d "$dir" ]; then
+    cd "$dir"
   fi
 }
 

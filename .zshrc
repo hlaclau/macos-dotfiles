@@ -26,6 +26,17 @@ esac
 # Ignore duplicates in history
 setopt HIST_IGNORE_ALL_DUPS
 
+# Setup history
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+
 # Initialize starship prompt
 eval "$(starship init zsh)"
 

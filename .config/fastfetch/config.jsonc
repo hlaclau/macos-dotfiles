@@ -3,7 +3,7 @@
         "type": "auto",
         "source": "~/.config/fastfetch/ascii.txt",
         "color": {
-            "1": "blue"
+            "1": "magenta"
         }
     },
     "display": {

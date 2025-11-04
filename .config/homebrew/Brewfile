@@ -40,6 +40,8 @@ brew "neofetch"
 brew "neovim"
 # JavaScript runtime and package manager
 brew "node"
+# Tool versionning manager
+brew "mise"
 # Fast, disk space efficient Node.js package manager
 brew "pnpm"
 # Systems programming language with modern features

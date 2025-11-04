@@ -44,8 +44,6 @@ brew "node"
 brew "pnpm"
 # Systems programming language with modern features
 brew "rust"
-# waybar but for macOS
-# brew "sketchybar"
 # go code generator from sql queries
 brew "sqlc"
 # Fast, minimal, and customizable shell prompt

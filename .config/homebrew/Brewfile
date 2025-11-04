@@ -20,6 +20,8 @@ brew "fzf"
 brew "gdu"
 # Syntax-highlighting pager for Git, diff, and grep with delta improvements
 brew "git-delta"
+# Markdown renderer for the terminal
+brew "glow"
 # better go linter
 brew "golangci-lint"
 # Beautiful terminal UI toolkit for shell scripts

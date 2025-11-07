@@ -23,6 +23,14 @@ esac
 #                               SHELL BEHAVIOR
 # =============================================================================
 
+# Initialize zsh completion system
+autoload -Uz compinit && compinit
+
+# Add git completion to fpath
+if [[ -d "$(brew --prefix)/share/zsh/site-functions" ]]; then
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
+
 # Ignore duplicates in history
 setopt HIST_IGNORE_ALL_DUPS
 

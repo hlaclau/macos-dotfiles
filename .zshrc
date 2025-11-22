@@ -130,15 +130,8 @@ alias lg="lazygit"
 alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 alias brew-update='brew bundle --file=.config/homebrew/Brewfile'
 
-# Function to open the Git repository URL (for macOS)
 repo() {
-  local repo_url
-  repo_url=$(git remote get-url origin 2>/dev/null)
-  if [ -n "$repo_url" ]; then
-    open "$repo_url" &>/dev/null
-  else
-    echo "Error: Not a Git repository or no 'origin' remote found."
-  fi
+  gh repo view --web
 }
 
 # Function for interactive directory selection with eza
@@ -180,3 +173,8 @@ fi
 # add dotnet tools to path
 export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+export PATH=$PATH:/Users/hlaclau/.spicetify
+
+# Added by Antigravity
+export PATH="/Users/hlaclau/.antigravity/antigravity/bin:$PATH"

@@ -175,6 +175,3 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export PATH=$PATH:/Users/hlaclau/.spicetify
-
-# Added by Antigravity
-export PATH="/Users/hlaclau/.antigravity/antigravity/bin:$PATH"

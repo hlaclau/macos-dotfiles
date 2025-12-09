@@ -116,14 +116,6 @@ alias n="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
-# Git related aliases
-alias g="git"
-alias ga="git add ."
-alias add="git add"
-alias commit="git commit -m"
-alias push="git push"
-alias gs="git status -s"
-alias gc='git commit -m'
 alias glog='git log --oneline --graph --all'
 
 alias lg="lazygit"
@@ -169,6 +161,10 @@ fi
 if [[ $- == *i* ]] && [ -z "$TMUX" ]; then
   fastfetch
 fi
+
+# =============================================================================
+#                               ADDING TOOLS TO PATH
+# =============================================================================
 
 # add dotnet tools to path
 export PATH="$HOME/.dotnet/tools:$PATH"

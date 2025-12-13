@@ -1,76 +1,117 @@
-# my dotfiles
+# dotfiles
 
-This repository contains all my dotfiles for macOS, including my Brewfile, configs for zsh, tmux, ghostty, and more.
+My macOS configuration managed with **Nix**, **nix-darwin**, and **home-manager**.
+
+## What's Included
+
+- **Shell**: zsh with syntax highlighting, autosuggestions, starship prompt
+- **Terminal**: ghostty, kitty (Catppuccin Mocha theme)
+- **Editor**: Neovim (AstroNvim) with LSPs and treesitter
+- **Tools**: bat, eza, fd, fzf, zoxide, lazygit, tmux
+- **macOS**: aerospace (tiling WM), sketchybar, system defaults
+- **Theme**: Catppuccin Mocha throughout
 
 ## Prerequisites
 
-Before you begin, ensure you have the following installed on your macOS system:
-
-- [Homebrew](https://brew.sh)
+- macOS (Apple Silicon or Intel)
 - Git
-- Stow 
 
 ## Installation
 
-1. Clone this repository to your home directory:
+### 1. Install Nix
 
-   ```sh
-   git clone git@github.com:hlaclau/dotfiles.git ~/dotfiles
-   cd ~/dotfiles
-   ```
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
 
-2. Create symbolic links for the dotfiles:
+Open a new terminal after installation.
 
-   ```sh
-   stow .
-   ```
+### 2. Clone this repository
 
-   This will symlink all configuration files to their appropriate locations in your home directory.  
-   Make sure this step completes successfully — some configurations (like `brew` or `zsh`) might rely on the symlinks being in place before installing packages.
+```bash
+git clone git@github.com:hlaclau/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+```
 
-3. Install Homebrew packages and applications:
+### 3. Build and apply the configuration
 
-   ```sh
-   brew bundle --file=.config/homebrew/Brewfile
-   ```
+```bash
+# First-time build (bootstraps nix-darwin)
+nix build .#darwinConfigurations.macbook.system
+./result/sw/bin/darwin-rebuild switch --flake .#macbook
+```
 
-   This will install all necessary tools, including:
-
-   - Development tools (neovim, etc.)
-   - Shell enhancements (starship, zoxide, fzf)
-   - Terminal utilities (bat, eza, btop)
-   - Applications (Ghostty, Firefox, Raycast, etc.)
-   - Fonts (JetBrains Mono Nerd Font, Geist Mono, Maple Mono)
-
-4. Set up your shell:
-
-   ```sh
-   # Add Homebrew's zsh to allowed shells
-   sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells'
-
-   # Change your default shell to Homebrew's zsh
-   chsh -s $(brew --prefix)/bin/zsh
-   ```
+Open a new terminal to load the new shell configuration.
 
 ## Updating
 
-To update your dotfiles and packages:
+After making changes to any `.nix` files:
 
-1. Pull the latest changes:
+```bash
+rebuild  # alias for darwin-rebuild switch --flake ~/dotfiles
+```
 
-   ```sh
-   cd ~/dotfiles
-   git pull
-   ```
+Or explicitly:
 
-2. Reapply symlinks if needed:
+```bash
+darwin-rebuild switch --flake ~/dotfiles#macbook
+```
 
-   ```sh
-   stow .
-   ```
+## Structure
 
-3. Update Homebrew packages:
+```
+~/dotfiles/
+├── flake.nix                    # Nix flake entry point
+├── hosts/darwin/default.nix     # macOS system config + Homebrew casks
+└── home/
+    ├── default.nix              # Main home-manager config
+    ├── shell/
+    │   ├── zsh.nix              # Shell configuration
+    │   ├── starship.nix         # Prompt
+    │   └── tmux.nix             # Terminal multiplexer
+    ├── programs/
+    │   ├── git.nix              # Git + delta
+    │   ├── fzf.nix              # Fuzzy finder + bat
+    │   └── terminals.nix        # Ghostty + Kitty configs
+    └── editors/
+        └── neovim.nix           # Neovim + treesitter + LSPs
+```
 
-   ```sh
-   brew bundle --file=.config/homebrew/Brewfile
-   ```
+## Package Management
+
+| Type | Manager | Location |
+|------|---------|----------|
+| CLI tools | Nix | `home/default.nix` |
+| GUI apps | Homebrew | `hosts/darwin/default.nix` |
+| Neovim plugins | lazy.nvim | `.config/nvim/` |
+
+## Key Aliases
+
+| Alias | Command |
+|-------|---------|
+| `rebuild` | `darwin-rebuild switch --flake ~/dotfiles` |
+| `ls` | `eza --color=always --icons=always -a` |
+| `cat` | `bat` |
+| `cd` | `z` (zoxide) |
+| `lg` | `lazygit` |
+| `n` | `nvim` |
+
+## Useful Commands
+
+```bash
+# Update flake inputs (nixpkgs, home-manager, etc.)
+nix flake update
+
+# Garbage collect old generations
+nix-collect-garbage -d
+
+# List installed packages
+nix-env -q
+
+# Show what will change before rebuilding
+darwin-rebuild build --flake ~/dotfiles#macbook
+```
+
+## Legacy (Stow)
+
+The original stow-based setup has been migrated to Nix. The `.config/` directory still contains the source configurations, which are now symlinked via home-manager's `xdg.configFile`.

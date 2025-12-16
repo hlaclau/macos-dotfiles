@@ -113,6 +113,7 @@ alias ll="eza --long --color=always --icons=always --git -a"
 alias cat="bat"
 alias cd="z"
 alias n="nvim"
+alias g="git"
 alias vi="nvim"
 alias vim="nvim"
 

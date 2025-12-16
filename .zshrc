@@ -122,6 +122,8 @@ alias lg="lazygit"
 alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 alias brew-update='brew bundle --file=.config/homebrew/Brewfile'
 
+alias pr="~/scripts/pullrequest.sh"
+
 repo() {
   gh repo view --web
 }
